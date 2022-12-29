@@ -14,6 +14,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
   <body>
+  <?php
+    require_once('Db.php');
+    Db::connect('127.0.0.1', 'permanent', 'root', '');
+    Db::query('
+            INSERT INTO msg_text (klicova_slova, popisek, jazyk_cs, jazyk_ru) 	
+            VALUES ("otevreno",  "pracovní doba",  "Po - Pá 10.00 - 18.00", "тПо - Пя 10.00 - 18.00")
+    ');
+    echo('OK');
+  ?>
   <header>
   <div class="grid-container">
     <div class="logo"><img alt="logo" src="icon/transparent.png"></div>
